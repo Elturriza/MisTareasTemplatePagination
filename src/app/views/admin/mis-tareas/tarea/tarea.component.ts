@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TareasService } from 'src/app/services/tareas.service';
 
 @Component({
   selector: 'app-tarea',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TareaComponent implements OnInit {
 
-  constructor() { }
+  tarea
+
+  constructor(private tareaService:TareasService) { }
 
   ngOnInit(): void {
+    this.tareaService.getTarea("1").toPromise().then(res=>{
+      this.tarea=res;
+      console.log(this.tarea);
+    })
   }
 
 }

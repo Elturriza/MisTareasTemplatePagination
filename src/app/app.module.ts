@@ -8,7 +8,6 @@ import { AppComponent } from "./app.component";
 import { HttpClientModule } from "@angular/common/http";
 
 //Pagination
-import {MatPaginatorModule} from '@angular/material/paginator';
 import {NgxPaginationModule} from 'ngx-pagination';
 
 //animation
@@ -102,7 +101,7 @@ import { TareaComponent } from './views/admin/mis-tareas/tarea/tarea.component';
     CardTareasComponent,
     TareaComponent
   ],
-  imports: [BrowserModule, AppRoutingModule,HttpClientModule,MatPaginatorModule,BrowserAnimationsModule,NgxPaginationModule],
+  imports: [BrowserModule, AppRoutingModule,HttpClientModule,BrowserAnimationsModule,NgxPaginationModule],
   providers: [],
   bootstrap: [AppComponent],
 })

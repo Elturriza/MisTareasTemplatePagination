@@ -10,6 +10,9 @@ export class TareasService {
   constructor(private http:HttpClient) { }
 
   getTareas(){
-    return this.http.get<Tareas>("https://jsonplaceholder.typicode.com/todos")
+    return this.http.get<Tareas>("https://jsonplaceholder.typicode.com/todos");
+  }
+  getTarea(id:string){
+    return this.http.get<Tareas>(`https://jsonplaceholder.typicode.com/todos/${id}`);
   }
 }

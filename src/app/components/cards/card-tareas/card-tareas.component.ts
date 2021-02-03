@@ -1,7 +1,6 @@
 import { Component, OnInit, Input, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { TareasService } from 'src/app/services/tareas.service';
-import {MatPaginator} from '@angular/material/paginator'
-import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-card-tareas',
@@ -12,7 +11,6 @@ export class CardTareasComponent implements OnInit {
   tareas;
   dataSource;
   p:number = 1;
-  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
 
   @Input()
   get color(): string {
@@ -23,16 +21,15 @@ export class CardTareasComponent implements OnInit {
   }
   private _color = "light";
 
-  constructor(private tareaService:TareasService) { }
+  constructor(private tareaService:TareasService, private router:Router) { }
 
   ngOnInit(): void {
     this.tareaService.getTareas().toPromise().then(res=>{
       this.tareas=res;
-      this.dataSource= new MatTableDataSource(this.tareas);
-      this.dataSource.paginator = this.paginator;
-      //console.log(this.tareas);
     }) 
   }
-  
+  verTarea(id:string){
+    this.router.navigate(['/admin/mitarea',id])
+  }
 
 }
