@@ -6,7 +6,7 @@ import { Tareas } from 'src/app/interfaces/tareas';
   templateUrl: './card-una-tarea.component.html'
 })
 export class CardUnaTareaComponent implements OnInit {
-
+  
   @Input() tarea:Tareas
   @Input()
   get color(): string {
@@ -23,6 +23,9 @@ export class CardUnaTareaComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    
   }
+
+  
 
 }
