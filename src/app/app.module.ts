@@ -59,6 +59,7 @@ import { UserDropdownComponent } from "./components/dropdowns/user-dropdown/user
 import { MisTareasComponent } from './views/admin/mis-tareas/mis-tareas.component';
 import { CardTareasComponent } from './components/cards/card-tareas/card-tareas.component';
 import { TareaComponent } from './views/admin/mis-tareas/tarea/tarea.component';
+import { CardUnaTareaComponent } from './components/cards/card-una-tarea/card-una-tarea.component';
 
 
 @NgModule({
@@ -99,7 +100,8 @@ import { TareaComponent } from './views/admin/mis-tareas/tarea/tarea.component';
     ProfileComponent,
     MisTareasComponent,
     CardTareasComponent,
-    TareaComponent
+    TareaComponent,
+    CardUnaTareaComponent
   ],
   imports: [BrowserModule, AppRoutingModule,HttpClientModule,BrowserAnimationsModule,NgxPaginationModule],
   providers: [],
