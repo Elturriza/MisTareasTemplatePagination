@@ -22,14 +22,10 @@ export class TareaComponent implements OnInit {
   ngOnInit(): void {
     this.tareaService.getTarea(this.id).toPromise().then(res=>{
       this.tarea=res;
-      //this.guardarTarea();
+      
     })
   }
 
-  // guardarTarea(){
-  //   this.tareas.push(this.tarea);
-  //   localStorage.setItem("Tarea",JSON.stringify(this.tareas));
-  //   console.log("guardado");
-  // }
+  
 
 }
