@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Router} from "@angular/router";
-import {CookieService} from 'ngx-cookie-service';
+import {CookieService} from 'node_modules/ngx-cookie-service/ngx-cookie-service';
 import { RestApiService } from "src/app/services/rest-api.service";
 
 
@@ -13,7 +13,6 @@ export class LoginComponent implements OnInit {
   private cookieValue;
   
   perfil={
-    name:"",
     email:"",
     password:""
   };
