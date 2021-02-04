@@ -45,6 +45,10 @@ export class RestApiService {
     );
   }
 
+  loggedIn(){
+    return !!localStorage.getItem('token');
+  }
+
    handleError(error) {
     let errorMessage = '';
     if(error.error instanceof ErrorEvent) {

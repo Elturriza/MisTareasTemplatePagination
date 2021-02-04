@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Router} from "@angular/router";
-import {CookieService} from 'node_modules/ngx-cookie-service/ngx-cookie-service';
 import { RestApiService } from "src/app/services/rest-api.service";
+import {CookieService} from 'node_modules/ngx-cookie-service';
 
 
 @Component({
@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
     password:""
   };
   
-  constructor(private cookieService:CookieService, private apiService:RestApiService,private router:Router ) {}
+  constructor( private apiService:RestApiService,private router:Router, private cookieService:CookieService ) {}
 
   ngOnInit(): void {}
 
@@ -36,6 +36,6 @@ export class LoginComponent implements OnInit {
       this.cookieValue = this.cookieService.get('Token');
       this.cookieService.set('Token',JSON.stringify(data));
     })
-    //this.router.navigate(['admin/dashboard']);
+    this.router.navigate(['admin/dashboard']);
   }
 }
