@@ -22,6 +22,11 @@ import { LandingComponent } from "./views/landing/landing.component";
 import { ProfileComponent } from "./views/profile/profile.component";
 import { TareaComponent } from "./views/admin/mis-tareas/tarea/tarea.component";
 
+//guard
+import{
+  AuthGuardService as AuthGuard
+} from '../app/services/auth-guard.service'
+
 const routes: Routes = [
   // admin views
   {
@@ -32,8 +37,8 @@ const routes: Routes = [
       { path: "settings", component: SettingsComponent },
       { path: "tables", component: TablesComponent },
       { path: "maps", component: MapsComponent },
-      { path: "mistareas", component: MisTareasComponent },
-      { path: "mitarea/:id", component: TareaComponent },
+      { path: "mistareas", component: MisTareasComponent},
+      { path: "mitarea/:id", component: TareaComponent},
       { path: "", redirectTo: "dashboard", pathMatch: "full" },
     ],
   },
