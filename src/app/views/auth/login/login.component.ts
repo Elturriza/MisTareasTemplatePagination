@@ -32,6 +32,7 @@ export class LoginComponent implements OnInit {
   login(){
     this.apiService.loginUser(this.perfil).subscribe((data:any)=>{
       console.log(data);
+      
       localStorage.setItem("token",JSON.stringify(data))
       this.cookieValue = this.cookieService.get('Token');
       this.cookieService.set('Token',JSON.stringify(data));

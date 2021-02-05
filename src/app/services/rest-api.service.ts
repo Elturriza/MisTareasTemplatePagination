@@ -6,7 +6,7 @@ import {SingupToken} from '../shared/SingupToken';
 import { Observable, throwError ,BehaviorSubject} from 'rxjs';
 import { Router } from '@angular/router';
 import {CookieService} from 'ngx-cookie-service';
-import {catchError} from 'rxjs/operators';
+import {catchError, retry} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -32,15 +32,15 @@ export class RestApiService {
 
 
    createUser(user:Singup){
-      return this.http.post<Singup>(`${apiURL}api/Students/Crear`,user,this.httpOptions)
+      return this.http.post<Singup>(`${apiURL}`+ `api/Students/Crear`,user,this.httpOptions)
       .pipe(
-        
         catchError(this.handleError)
       );
    }
    loginUser(user:Singup){
     return this.http.post<Singup>(`${apiURL}api/Students/Login`,user,this.httpOptions)
     .pipe(
+      retry(1),
       catchError(this.handleError)
     );
   }

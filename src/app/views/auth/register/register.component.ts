@@ -17,7 +17,11 @@ export class RegisterComponent implements OnInit {
 
   constructor(private router:Router,private restApi:RestApiService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+
+    console.log("hola turi soy un mensaje");
+
+  }
 
   // guardaName(name:string){
   //   this.perfil.name=name;
@@ -25,11 +29,10 @@ export class RegisterComponent implements OnInit {
   // }
   guardaEmail(email:string){
     this.perfil.email=email;
-    
+
   }
   guardaPass(pass:string){
     this.perfil.password=pass;
-    
   }
   safeAccount(){
     // this.perfilList.push(Object.assign({},this.perfil));//to copy an array to another
@@ -38,8 +41,15 @@ export class RegisterComponent implements OnInit {
     // console.log("guardado");
     // this.router.navigate(['auth/login']);
 
-    this.restApi.createUser(this.perfil);
-    this.router.navigate(['auth/login']);
+    console.log(this.perfil);
+    this.restApi.createUser(this.perfil).subscribe((data:{})=>{
+      console.log(data);
+      
+    //  this.router.navigate(['auth/login']);
+    
+    })
+    
+    
   }
   
 }
