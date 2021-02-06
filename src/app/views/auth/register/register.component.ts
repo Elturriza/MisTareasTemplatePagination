@@ -29,6 +29,9 @@ export class RegisterComponent implements OnInit {
     
     this.restApi.createUser(this.singupForm.value).subscribe(data=>{
        console.log(data);
+       if(data){
+        this.router.navigate(['auth/login']);
+       }
     })
     
     //this.router.navigate(['auth/login']);
