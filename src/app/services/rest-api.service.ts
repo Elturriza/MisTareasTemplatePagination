@@ -32,7 +32,7 @@ export class RestApiService {
 
 
    createUser(user:Singup){
-      return this.http.post<Singup>(`${apiURL}`+ `api/Students/Crear`,user,this.httpOptions)
+      return this.http.post<Singup>(`${apiURL}api/Students/Crear`,user)
       .pipe(
         catchError(this.handleError)
       );
@@ -58,6 +58,7 @@ export class RestApiService {
     } else {
       // Get server-side error
       errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
+      console.log("servidor");
       console.log(errorMessage);
     }
     window.alert(errorMessage);

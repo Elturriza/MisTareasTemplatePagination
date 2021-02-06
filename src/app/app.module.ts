@@ -60,7 +60,7 @@ import { MisTareasComponent } from './views/admin/mis-tareas/mis-tareas.componen
 import { CardTareasComponent } from './components/cards/card-tareas/card-tareas.component';
 import { TareaComponent } from './views/admin/mis-tareas/tarea/tarea.component';
 import { CardUnaTareaComponent } from './components/cards/card-una-tarea/card-una-tarea.component';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -103,7 +103,7 @@ import { CardUnaTareaComponent } from './components/cards/card-una-tarea/card-un
     TareaComponent,
     CardUnaTareaComponent
   ],
-  imports: [BrowserModule, AppRoutingModule,HttpClientModule,BrowserAnimationsModule,NgxPaginationModule],
+  imports: [BrowserModule, AppRoutingModule,HttpClientModule,BrowserAnimationsModule,NgxPaginationModule,FormsModule,ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

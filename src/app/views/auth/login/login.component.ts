@@ -36,7 +36,14 @@ export class LoginComponent implements OnInit {
       localStorage.setItem("token",JSON.stringify(data))
       this.cookieValue = this.cookieService.get('Token');
       this.cookieService.set('Token',JSON.stringify(data));
+      if("token" in localStorage){
+        this.router.navigate(['admin/dashboard']);
+       }
     })
-    this.router.navigate(['admin/dashboard']);
+    
+    // if(localStorage.getItem("token") === null){
+    //   this.router.navigate(['admin/dashboard']);
+    //  }
+
   }
 }
